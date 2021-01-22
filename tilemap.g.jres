@@ -4,6 +4,21 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
+    "tile1": {
+        "data": "hwQQABAAAAB3d+7u7s4MAHd35+7t7s4Md3d37u7u7gt35+7u7u7uAHfn7u7u7u4Ad+fu7e7uDgB3d+fu7u7OAHd37u7u3u4Md+7u7u7u7gt37u7u7e7uAHd37u7u7gAAd3fn7e7uAAB3d+7u7u4MAHd35+7u7s4Ad+fu7u7u7Qx35+7u7u7uDg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile2": {
+        "data": "hwQQABAAAAAAAEQkIkQiggBEJFVFIiKCAAICACQiIoIAAAAgJCIiggAlICIiIiKIAABARCQiIoggAiBVIiIiiAAAACIiIiKIAAAAACQiIoggAiREJCIiiFAAJCQiIiKIACAgIiIiIogAUAAiIiIiggAAAAAgIiKCAAAAACUiIoIAAkQkIiIigg==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "tile3": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
