@@ -10,3 +10,23 @@ tiles.setTilemap(tiles.createTilemap(hex`32000a000202020202010302020101010104020
     .222............22.........2.........222..222.....
     .......2222............22.....222.................
     `, [myTiles.transparency16,sprites.castle.tileGrass3,sprites.castle.tileGrass1,sprites.castle.tileGrass2,sprites.builtin.forestTiles0,sprites.builtin.forestTiles5,sprites.builtin.forestTiles7,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles8], TileScale.Sixteen))
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . f f f f f f . . . . . 
+    . . . f f e e e e f 2 f . . . . 
+    . . f f e e e e f 2 2 2 f . . . 
+    . . f e e e f f e e e e f . . . 
+    . . f f f f e e 2 2 2 2 e f . . 
+    . . f e 2 2 2 f f f f e 2 f . . 
+    . f f f f f f f e e e f f f . . 
+    . f f e 4 4 e b f 4 4 e e f . . 
+    . f e e 4 d 4 1 f d d e f . . . 
+    . . f e e e e e d d d f . . . . 
+    . . . . f 4 d d e 4 e f . . . . 
+    . . . . f e d d e 2 2 f . . . . 
+    . . . f f f e e f 5 5 f f . . . 
+    . . . f f f f f f f f f f . . . 
+    . . . . f f . . . f f f . . . . 
+    `, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
