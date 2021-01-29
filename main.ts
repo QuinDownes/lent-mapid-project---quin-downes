@@ -6,6 +6,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile2`, function (sprite, location) {
     game.over(false, effects.melt)
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
+    game.over(true)
+    effects.confetti.startScreenEffect()
+})
+let coin: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)
@@ -30,3 +35,25 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 scene.cameraFollowSprite(mySprite)
 mySprite.ay = 200
+for (let value of tiles.getTilesByType(assets.tile`tile12`)) {
+    coin = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . f 5 5 5 5 5 5 5 f . . . 
+        . . . f 5 5 4 4 4 4 4 5 5 f . . 
+        . . f 5 5 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 4 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 4 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 4 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 4 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 4 5 5 5 5 5 5 5 5 5 f . 
+        . . f 5 5 5 5 5 5 5 5 5 5 5 f . 
+        . . . f 5 5 4 4 5 5 5 5 5 f . . 
+        . . . . f 5 5 5 5 5 5 5 f . . . 
+        . . . . . f f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnTile(coin, value)
+    tiles.setTileAt(value, assets.tile`transparency16`)
+}
