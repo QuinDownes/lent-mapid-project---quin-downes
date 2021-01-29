@@ -2,7 +2,8 @@
     "name": "Lent MAPID Project - Quin Downes",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*"
     },
     "files": [
         "main.blocks",
