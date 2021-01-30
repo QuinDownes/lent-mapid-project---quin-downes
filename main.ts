@@ -3,8 +3,8 @@ namespace SpriteKind {
     export const flower = SpriteKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (mySprite2.vy == 0) {
-        mySprite2.vy = -100
+    if (character.vy == 0) {
+        character.vy = -100
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
@@ -92,17 +92,24 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.flower, function (sprite, otherS
     100,
     true
     )
+    bee.setPosition(character.x + 80, character.y + 80)
+    bee.follow(character)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorOpenNorth, function (sprite, location) {
     game.over(true, effects.confetti)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    bee.destroy()
+    info.changeLifeBy(-1)
+})
 let bee: Sprite = null
 let flower: Sprite = null
 let coin1: Sprite = null
-let mySprite2: Sprite = null
+let character: Sprite = null
+info.setLife(2)
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)
-mySprite2 = sprites.create(img`
+character = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . f f f f f f . . . . . 
     . . . f f e e e e f 2 f . . . . 
@@ -120,9 +127,9 @@ mySprite2 = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . f f . . . f f f . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite2, 100, 0)
-scene.cameraFollowSprite(mySprite2)
-mySprite2.ay = 200
+controller.moveSprite(character, 100, 0)
+scene.cameraFollowSprite(character)
+character.ay = 200
 for (let value of tiles.getTilesByType(assets.tile`tile12`)) {
     coin1 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
