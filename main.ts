@@ -249,6 +249,10 @@ character = sprites.create(img`
     . . . f f f f f f f f f f . . . 
     . . . . f f . . . f f f . . . . 
     `, SpriteKind.Player)
+tiles.placeOnRandomTile(character, assets.tile`tile14`)
+for (let value of tiles.getTilesByType(assets.tile`tile14`)) {
+    tiles.setTileAt(value, assets.tile`transparency16`)
+}
 controller.moveSprite(character, 100, 0)
 scene.cameraFollowSprite(character)
 character.ay = 200
